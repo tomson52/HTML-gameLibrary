@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Games Lib</title>
+        <link rel = "stylesheet"
+              type = "text/css"
+              href = "css/gamelib.css" />
+    </head>
+
+        <p><h2>Game Lib</h2>
+
+            <p><h3>Series 1</h3>
+                <a th:each="game : ${gamesList}"
+                   th:object="${game}"
+                   th:if="${game.getSeries()} == 'Series 1'"
+                   th:href="${game.getIndexPath()}">
+                <img th:src="${game.getCardPath()}"></a>
+            <p><h3>Series 2</h3>
+                <a th:each="game : ${gamesList}"
+                   th:object="${game}"
+                   th:if="${game.getSeries()} == 'Series 2'"
+                   th:href="${game.getIndexPath()}">
+                <img th:src="${game.getCardPath()}"></a>
+            <p><h3>Other</h3>
+                <a th:each="game : ${gamesList}"
+                   th:object="${game}"
+                   th:if="${game.getSeries()} == 'Other'"
+                   th:href="${game.getIndexPath()}">
+                <img th:src="${game.getCardPath()}"></a>
+
+
+    </body>
+</html>
