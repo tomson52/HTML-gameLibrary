@@ -17,9 +17,15 @@ public class AppController {
         this.gamesConfig = gamesConfig;
     }
 
-    @GetMapping("/")
+    @GetMapping("/index")
     public String getGamesPage(Model model) {
         model.addAttribute("gamesList", gamesConfig.getGames());
         return "games";
     }
+
+    /*@GetMapping("/")
+    public String getGamesPage(Model model) {
+        model.addAttribute("gamesList", gamesConfig.getGames());
+        return "games";
+    }*/
 }
